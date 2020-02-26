@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Fragment } from "react";
+// 1 引入 路由
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
+// 引入首页组件
+import Home from "./pages/home/index";
+import MapCity from "./pages/mapCity/index";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        {/* 2 使用 */}
+        <div>
+          <Router>
+            <Switch>
+              <Route path="/home" component={Home}></Route>
+              <Route exact path="/mapCity" component={MapCity}></Route>
+              <Route exact path="/">
+                <Redirect to="/home"></Redirect>
+              </Route>
+            </Switch>
+          </Router>
+        </div>
+      </Fragment>
+    );
+  }
 }
-
 export default App;
