@@ -35,11 +35,9 @@ class Home extends React.Component {
             key="home"
             icon={<span className="iconfont icon-ind"></span>}
             selectedIcon={<span className="iconfont icon-ind"></span>}
-            selected={this.state.selectedTab === "blueTab"}
+            selected={this.props.location.pathname === "/home/index"}
             onPress={() => {
-              this.setState({
-                selectedTab: "blueTab"
-              });
+              this.props.history.push("/home/index");
             }}
           >
             <Route path="/home/index" component={Index}></Route>
@@ -49,13 +47,11 @@ class Home extends React.Component {
             selectedIcon={<span className="iconfont icon-findHouse"></span>}
             title="找房"
             key="found"
-            selected={this.state.selectedTab === "redTab"}
+            selected={this.props.location.pathname === "/home/found"}
             onPress={() => {
-              this.setState({
-                selectedTab: "redTab"
-              });
+              this.props.history.push("/home/found");
             }}
-            data-seed="logId1"
+      
           >
          <Route path="/home/Found" component={Found} ></Route>
           </TabBar.Item>
@@ -64,28 +60,24 @@ class Home extends React.Component {
             selectedIcon={<span className="iconfont icon-infom"></span>}
             title="资讯"
             key="news"
-            selected={this.state.selectedTab === "greenTab"}
+            selected={this.props.location.pathname === "/home/news"}
             onPress={() => {
-              this.setState({
-                selectedTab: "greenTab"
-              });
+              this.props.history.push("/home/news");
             }}
           >
-            {/* <Route path="/home/News" component={News}></Route> */}
+            <Route path="/home/News" component={News}></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={<span className="iconfont icon-my"></span>}
             selectedIcon={<span className="iconfont icon-my"></span>}
             title="我的"
             key="my"
-            selected={this.state.selectedTab === "yellowTab"}
+            selected={this.props.location.pathname === "/home/my"}
             onPress={() => {
-              this.setState({
-                selectedTab: "yellowTab"
-              });
+              this.props.history.push("/home/my");
             }}
           >
-            {/* <Route path="/home/My" component={My} ></Route> */}
+            <Route path="/home/My" component={My} ></Route>
           </TabBar.Item>
         </TabBar>
       </div>
