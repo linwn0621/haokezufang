@@ -1,0 +1,30 @@
+.Index {
+  .IndexSwiper {
+    
+      a {
+        image {
+
+        }
+      }
+    
+  }
+
+  .IndexNav {
+    background-color: #fff;
+      display: flex;
+      .navitem {
+        padding-top:10px ;
+        flex: 1;
+      text-align: center;
+      
+        img {
+width: 50%;
+        }
+
+        p {
+padding: 10px 0;
+        }
+      }
+    
+  }
+}
