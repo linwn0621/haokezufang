@@ -24,12 +24,14 @@ class Index extends React.Component {
       { id: 4, imgSrc: nav4, text: "去出租" }
     ],
     // 租房 数据
-    rentings: []
-    // imgHeight: 176,
+    rentings: [],
+    // 资讯
+    news: []
   };
   componentDidMount() {
     this.getSwiperList();
     this.getZufanglist();
+    this.getNewslist();
   }
 
   // 获取轮播图的数据
@@ -52,6 +54,11 @@ class Index extends React.Component {
           rentings: res.data.body
         });
       });
+  };
+  getNewslist = () => {
+    axios.get("http://157.122.54.189:9060/home/news").then(res => {
+      this.setState({ news: res.data.body });
+    });
   };
   render() {
     return (
@@ -114,13 +121,34 @@ class Index extends React.Component {
                   <div className={IndexCss.text_desc}>{v.desc}</div>
                 </div>
                 <div className={IndexCss.item_img}>
-                  <img src={"http://157.122.54.189:9060"+v.imgSrc} alt="" />
+                  <img src={"http://157.122.54.189:9060" + v.imgSrc} alt="" />
                 </div>
               </div>
             ))}
           </div>
         </div>
         {/* 首页租房结束 */}
+
+        {/* 首页资讯开始 */}
+        <div className={IndexCss.IndexNews}>
+          <div className={IndexCss.newstitle}>最新资讯</div>
+
+          {this.state.news.map(v => (
+            <div className={IndexCss.newsItem} key={v.id}>
+              <div className={IndexCss.newsImg}>
+                <img src={"http://157.122.54.189:9060" + v.imgSrc} alt="" />
+              </div>
+              <div className={IndexCss.newsContent}>
+                <div className={IndexCss.newsContent_title}>{v.title}</div>
+                <div className={IndexCss.newsInfo}>
+                  <span>{v.from}</span>
+                  <span>{v.date}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* 首页资讯结束 */}
       </div>
     );
   }
