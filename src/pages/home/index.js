@@ -8,6 +8,7 @@ import Index from "./index/index";
 import Found from "./found";
 import News from "./news";
 import My from "./my";
+
 class Home extends React.Component {
   constructor(props) {
     super(props);

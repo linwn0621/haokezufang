@@ -1,0 +1,50 @@
+.Cityinput {
+  display: flex;
+
+  padding: 0 10px;
+  align-items: center;
+  .inputLeft {
+    background-color: #ffffff;
+    height: 34px;
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    padding: 5px 5px 5px 8px;
+    margin: 0 10px;
+    border-radius: 3px;
+    .inputLeft_city {
+      display: flex;
+      align-items: center;
+      span {
+      }
+      .icon-arrow {
+      }
+    }
+
+    .inputLeft_search {
+      display: flex;
+      align-items: center;
+      border-left: 1px solid #e5e5e5;
+      margin-left: 12px;
+      .icon-seach {
+        padding: 0 2px 0 12px;
+        color: #9c9fa1;
+        font-size: 15px;
+      }
+
+      .searchInfo {
+        padding-left: 4px;
+        font-size: 13px;
+        color: #9c9fa1;
+      }
+    }
+  }
+
+  .inputRight {
+    .icon-map {
+      font-size: 25px;
+      color: #fff;
+    }
+  }
+}

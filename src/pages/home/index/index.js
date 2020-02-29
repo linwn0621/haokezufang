@@ -6,6 +6,9 @@ import nav2 from "../../../assets/images/nav-2.png";
 import nav3 from "../../../assets/images/nav-3.png";
 import nav4 from "../../../assets/images/nav-4.png";
 import IndexCss from "./index.module.scss";
+// 引入搜索框
+import Cityinput from "../../../components/cityinput/index";
+
 class Index extends React.Component {
   state = {
     swiperList: [],
@@ -65,6 +68,11 @@ class Index extends React.Component {
       <div className={IndexCss.Index}>
         {/* 轮播图开始 */}
         <div className={IndexCss.IndexSwiper}>
+          {/* 搜索框开始 */}
+          <div className={IndexCss.IndexInput}>
+            <Cityinput></Cityinput>
+          </div>
+          {/* 搜索框结束 */}
           {this.state.swiperList.length && (
             <Carousel autoplay infinite>
               {this.state.swiperList.map(val => (
