@@ -1,6 +1,6 @@
 import { Carousel } from "antd-mobile";
 import React from "react";
-import axios from "axios";
+import axios,{baseURL} from "../../../utils/request";
 import nav1 from "../../../assets/images/nav-1.png";
 import nav2 from "../../../assets/images/nav-2.png";
 import nav3 from "../../../assets/images/nav-3.png";
@@ -86,7 +86,7 @@ class Index extends React.Component {
                   }}
                 >
                   <img
-                    src={"http://157.122.54.189:9060" + val.imgSrc}
+                    src={baseURL + val.imgSrc}
                     alt=""
                     style={{ width: "100%", verticalAlign: "top" }}
                     onLoad={() => {
@@ -129,7 +129,7 @@ class Index extends React.Component {
                   <div className={IndexCss.text_desc}>{v.desc}</div>
                 </div>
                 <div className={IndexCss.item_img}>
-                  <img src={"http://157.122.54.189:9060" + v.imgSrc} alt="" />
+                  <img src={baseURL + v.imgSrc} alt="" />
                 </div>
               </div>
             ))}
@@ -144,7 +144,7 @@ class Index extends React.Component {
           {this.state.news.map(v => (
             <div className={IndexCss.newsItem} key={v.id}>
               <div className={IndexCss.newsImg}>
-                <img src={"http://157.122.54.189:9060" + v.imgSrc} alt="" />
+                <img src={baseURL + v.imgSrc} alt="" />
               </div>
               <div className={IndexCss.newsContent}>
                 <div className={IndexCss.newsContent_title}>{v.title}</div>
