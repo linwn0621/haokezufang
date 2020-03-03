@@ -9,6 +9,7 @@ import {
 // 引入首页组件
 import Home from "./pages/home/index";
 import MapCity from "./pages/mapCity/index";
+import CityChooese from "./pages/citychooese/index";
 // 引入封装的地图请求
 import { LocalCityAction } from "./store/actionCreator";
 
@@ -24,15 +25,16 @@ class App extends Component {
       <Fragment>
         {/* 2 使用 */}
         <div>
-          <Router>
+          {this.props.cityName && <Router>
             <Switch>
               <Route path="/home" component={Home}></Route>
               <Route exact path="/mapCity" component={MapCity}></Route>
+              <Route exact path="/cityChooese" component={CityChooese}></Route>
               <Route exact path="/">
                 <Redirect to="/home"></Redirect>
               </Route>
             </Switch>
-          </Router>
+          </Router>} 
         </div>
       </Fragment>
     );
@@ -40,6 +42,16 @@ class App extends Component {
   }
   
 }
+
+
+const mapStoreToProps = (state) => {
+ return{
+  cityName:state.mapReducer.city.name
+ }
+
+
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInitCity() {
@@ -49,5 +61,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStoreToProps, mapDispatchToProps)(App);
 
