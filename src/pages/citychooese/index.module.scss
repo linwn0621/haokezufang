@@ -1,0 +1,41 @@
+.city_view {
+  background: #ffffff;
+  position: relative;
+  .citys {
+    .citys_title {
+      height: 40px;
+      font-size: 14px;
+      padding: 10px 15px;
+      color: #999;
+
+      display: flex;
+      align-items: center;
+    }
+    .citys_names {
+      .city {
+        padding: 0 15px;
+        line-height: 40px;
+        font-size: 16px;
+        border-bottom: 1px solid #eee;
+      }
+    }
+  }
+  .citysnav {
+    position: absolute;
+    right: 5px;
+    top: 20px;
+    height: 90%;
+    //    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    .navs {
+      border-radius: 50%;
+    }
+    .active {
+      background-color: blueviolet;
+      color: black;
+    }
+  }
+}

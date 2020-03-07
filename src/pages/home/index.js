@@ -15,7 +15,7 @@ class Home extends React.Component {
     this.state = {
       selectedTab: "blueTab"
     };
-    console.log(this.props)
+    // console.log(this.props)
     // 判断一下当前url 如果它是 /home/ 重定向到 /home/index
     if (this.props.match.path === "/home") {
       this.props.history.push("/home/index");

@@ -16,50 +16,50 @@ import { LocalCityAction } from "./store/actionCreator";
 import { connect } from "react-redux";
 
 class App extends Component {
-  componentDidMount(){
-  this.props.handleInitCity()
-  // console.log(this.props.city,1)
+  componentDidMount() {
+    this.props.handleInitCity();
+    // console.log(this.props.city,1)
   }
   render() {
     return (
       <Fragment>
         {/* 2 使用 */}
         <div>
-          {this.props.cityName && <Router>
-            <Switch>
-              <Route path="/home" component={Home}></Route>
-              <Route exact path="/mapCity" component={MapCity}></Route>
-              <Route exact path="/cityChooese" component={CityChooese}></Route>
-              <Route exact path="/">
-                <Redirect to="/home"></Redirect>
-              </Route>
-            </Switch>
-          </Router>} 
+          {this.props.cityName && (
+            <Router>
+              <Switch>
+                <Route path="/home" component={Home}></Route>
+                <Route exact path="/mapCity" component={MapCity}></Route>
+                <Route
+                  exact
+                  path="/cityChooese"
+                  component={CityChooese}
+                ></Route>
+                <Route exact path="/">
+                  <Redirect to="/home"></Redirect>
+                </Route>
+              </Switch>
+            </Router>
+          )}
         </div>
       </Fragment>
     );
-    
   }
-  
 }
 
+const mapStoreToProps = state => {
+  return {
+    cityName: state.mapReducer.city.name
+  };
+};
 
-const mapStoreToProps = (state) => {
- return{
-  cityName:state.mapReducer.city.name
- }
-
-
-}
-
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     handleInitCity() {
-      // localCityAction 是一个函数 
+      // localCityAction 是一个函数
       dispatch(LocalCityAction());
     }
-  }
-}
+  };
+};
 
 export default connect(mapStoreToProps, mapDispatchToProps)(App);
-

@@ -10,10 +10,9 @@ const defaultState = {
 const reducerManage = (state = defaultState, action) => {
   // 3将数据深拷贝
   let newState = JSON.parse(JSON.stringify(state));
- 
   if (action.type === "initCity") {
     newState.city = action.value;
-    console.log(newState,1)
+    // console.log(newState,1)
     return newState;
   }
 

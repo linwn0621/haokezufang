@@ -40,7 +40,7 @@ class Index extends React.Component {
   // 获取轮播图的数据
   getSwiperList = () => {
     axios.get("http://157.122.54.189:9060/home/swiper").then(res => {
-      console.log(res);
+      // console.log(res);
       this.setState({
         swiperList: res.data.body
       });
