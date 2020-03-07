@@ -28,7 +28,7 @@ class Cityinput extends Component {
             <div className={indexCss.searchInfo}>请输入小区或地址</div>
           </div>
         </div>
-        <div className={indexCss.inputRight}>
+        <div className={indexCss.inputRight} onClick={()=>{this.props.history.push("/mapCity")}}>
           <i className={" iconfont icon-map " + indexCss["icon-map"]}></i>
         </div>
       </div>

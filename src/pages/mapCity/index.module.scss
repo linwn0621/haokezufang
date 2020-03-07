@@ -1,0 +1,16 @@
+.city_map{
+.map{
+    height: calc(100vh - 45px);
+    .cityname{
+        background-color: #1fba74;
+        width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    color: #fff;
+    border: 2px solid hsla(0,0%,100%,.8);
+    cursor: pointer;
+ text-align: center;
+ padding: 18px 0 6px;
+    }
+}
+}

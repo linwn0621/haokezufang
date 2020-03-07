@@ -1,4 +1,4 @@
-const BMap = window.BMap;
+export const BMap = window.BMap;
 var geolocation = new BMap.Geolocation();
 var myGeo = new BMap.Geocoder();
 // 将定位请求封装成promise
